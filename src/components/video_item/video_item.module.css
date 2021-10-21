@@ -4,7 +4,7 @@
   width: 50%;
   padding: 15px 10px;
   margin-bottom: 0.2rem;
-  box-shadow: 5px 5px 5px lightgray;
+  box-shadow: 3px 3px 5px 0px lightgray;
   cursor: pointer;
   transition: all 300ms ease;
 }
