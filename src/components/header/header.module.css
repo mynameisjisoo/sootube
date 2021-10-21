@@ -1,0 +1,66 @@
+:root {
+  /* color */
+  --color-black: #000000;
+  --color-gray: #484848;
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+.home:hover,
+.btn:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 0 8px 0 16px;
+}
+
+.title {
+  margin-left: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+  width: 100%;
+}
+
+.input {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  border-radius: 2px;
+}
+
+.btn {
+  height: 2.5rem;
+  width: 3rem;
+  background-color: var(--color-gray);
+}
+
+.btnImg {
+  height: 1.2rem;
+}
