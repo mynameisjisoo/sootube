@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import './app.css';
+import styles from './app.module.css';
+
+import SearchHeader from './components/search_header/search_header';
 import VideoList from './components/video_list/video_list';
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [result, setResult] = useState([]);
+
   useEffect(() => {
     const requestOptions = {
       method: 'GET',
@@ -19,10 +23,10 @@ function App() {
       .catch(error => console.log('error', error));
   }, []); //마운트 되었을 때만 호출
   return (
-    <>
+    <div className={styles.app}>
+      <SearchHeader videos={videos} />
       <VideoList videos={videos} />
-      {console.log(videos)}
-    </>
+    </div>
   );
 }
 
