@@ -18,7 +18,12 @@ function App() {
       .then(result => setVideos(result.items))
       .catch(error => console.log('error', error));
   }, []); //마운트 되었을 때만 호출
-  return <>{<VideoList videos={videos} />}</>;
+  return (
+    <>
+      <VideoList videos={videos} />
+      {console.log(videos)}
+    </>
+  );
 }
 
 export default App;
