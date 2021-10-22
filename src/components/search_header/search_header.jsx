@@ -45,11 +45,6 @@ const SearchHeader = ({ onSearch }) => {
           />
         </button>
       </header>
-      {/* {{ keyword } === null ? (
-        <VideoList videos={props.videos} />
-      ) : (
-        <Search keyword={keyword} />
-      )} */}
     </>
   );
 };
