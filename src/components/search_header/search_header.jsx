@@ -1,54 +1,55 @@
 import React, { useState } from 'react';
-import Search from '../search';
-import VideoList from '../video_list/video_list';
 import styles from './search_header.module.css';
 
-const SearchHeader = props => {
-  const [keyword, setKeyword] = useState([]);
-
+const SearchHeader = ({ onSearch }) => {
   const inputRef = React.createRef();
-  const formRef = React.createRef();
 
-  const onSearch = () => {
-    const input = inputRef.current.value;
-    input && setKeyword(input);
-    console.log(keyword);
+  const handleSearch = () => {
+    const value = inputRef.current.value;
+    console.log(value);
+    onSearch(value);
+  };
+
+  const onClick = () => {
+    handleSearch();
+  };
+  const onKeyPress = event => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
   };
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.home}>
+        <button className={styles.homeBtn}>
           <img
             className={styles.logo}
-            src='images/logo.png'
+            src='/images/logo.png'
             alt='youtube logo'
           />
-          <a className={styles.title} href='#'>
-            {/**button으로 바꿀까 */}
-            SooTube
-          </a>
-        </div>
-        <form ref={formRef} className={styles.form} onSubmit={onSearch}>
-          <input
-            ref={inputRef}
-            className={styles.input}
-            type='text'
-            placeholder='검색'
+          <h1 className={styles.title}>SooTube</h1>
+        </button>
+
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type='search'
+          placeholder='Search anything you want'
+          onKeyPress={onKeyPress}
+        />
+        <button className={styles.btn} type='submit' onClick={onClick}>
+          <img
+            className={styles.btnImg}
+            src='/images/search.png'
+            alt='search'
           />
-          <button className={styles.btn}>
-            <img
-              className={styles.btnImg}
-              src='images/search.png'
-              alt='search img'
-            />
-          </button>
-        </form>
+        </button>
       </header>
-      {{ keyword } === null ? (
+      {/* {{ keyword } === null ? (
         <VideoList videos={props.videos} />
       ) : (
         <Search keyword={keyword} />
-      )}
+      )} */}
     </>
   );
 };
