@@ -1,18 +1,7 @@
-:root {
-  /* color */
-  --color-black: #000000;
-  --color-gray: #484848;
-}
-
 button,
 input {
   outline: none;
   border: none;
-}
-
-.home:hover,
-.btn:hover {
-  cursor: pointer;
 }
 
 .header {
@@ -22,29 +11,22 @@ input {
   justify-content: space-between;
   align-items: center;
   height: 3.5rem;
+  padding: 0.8rem 1rem;
 }
 
-.home {
+.homeBtn {
   display: flex;
   align-items: center;
-}
-
-.logo {
-  margin: 0 8px 0 16px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 0.5rem;
 }
 
 .title {
-  margin-left: 5px;
+  margin-left: 0.5rem;
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
-}
-
-.form {
-  display: flex;
-  align-items: center;
-  margin: 0 16px;
-  width: 100%;
 }
 
 .input {
@@ -58,9 +40,14 @@ input {
 .btn {
   height: 2.5rem;
   width: 3rem;
-  background-color: var(--color-gray);
+  cursor: pointer;
+  background-color: darkgray;
 }
 
+.btn:hover {
+  background-color: lightskyblue;
+}
 .btnImg {
-  height: 1.2rem;
+  padding: 0.5em 0.2em;
+  height: 100%;
 }
