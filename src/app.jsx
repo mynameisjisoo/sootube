@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import styles from './app.module.css';
-
 import SearchHeader from './components/search_header/search_header';
+import VideoDetail from './components/video_detail/video_detail';
 import VideoList from './components/video_list/video_list';
-import VideoPlayer from './components/video_play/video_player';
 
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const selectVideo = video => {
+    setSelectedVideo(video);
+  };
+
   const search = query => {
     youtube
       .search(query) //
@@ -23,7 +28,21 @@ function App({ youtube }) {
   return (
     <div className={styles.app}>
       <SearchHeader onSearch={search} />
-      <VideoList className={styles.videoList} videos={videos} />
+      <section className={styles.content}>
+        {selectedVideo && (
+          <div className={styles.detail}>
+            <VideoDetail video={selectedVideo} />
+          </div>
+        )}
+        <div className={styles.list}>
+          <VideoList
+            className={styles.videoList}
+            videos={videos}
+            onVideoClick={selectVideo}
+            display={selectVideo ? 'list' : 'grid'}
+          />
+        </div>
+      </section>
     </div>
   );
 }
