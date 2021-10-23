@@ -1,9 +1,21 @@
+.container {
+  padding: 0.2em;
+}
+
+.container.grid {
+  width: 50%;
+}
+
+.container.list {
+  width: 100%;
+}
+
 .video {
   display: flex;
   align-items: center;
-  width: 50%;
-  padding: 15px 10px;
-  margin-bottom: 0.2rem;
+  width: 100%;
+  height: 100%;
+  /* padding: 15px 10px; */
   box-shadow: 3px 3px 5px 0px lightgray;
   cursor: pointer;
   transition: all 300ms ease;
@@ -16,6 +28,7 @@
 
 .thumbnail {
   width: 40%;
+  height: 100%;
 }
 
 .metadata {
@@ -25,7 +38,6 @@
 .title,
 .channel {
   margin: 0;
-  /* font-size: 0.8rem; */
 }
 
 .channel {
