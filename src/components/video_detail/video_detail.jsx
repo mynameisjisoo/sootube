@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './video_detail.module.css';
 const VideoDetail = ({ video, video: { snippet } }) => {
+  window.scrollTo(0, 0);
   return (
     <section className={styles.detail}>
       <iframe
@@ -14,7 +15,8 @@ const VideoDetail = ({ video, video: { snippet } }) => {
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         allowfullscreen
       ></iframe>
-      <h2>{snippet.title}</h2>
+      <h2 className={styles.title}>{snippet.title}</h2>
+      {/* <div className={styles.}></div> */}
       <h3>{snippet.channelTitle}</h3>
       <pre className={styles.description}>{snippet.description}</pre>
     </section>

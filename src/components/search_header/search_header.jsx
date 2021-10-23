@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styles from './search_header.module.css';
 
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = ({ onSearch, getMostPopular, resetSelectVideo }) => {
   const inputRef = React.createRef();
 
   const handleSearch = () => {
     const value = inputRef.current.value;
-    console.log(value);
     onSearch(value);
   };
 
@@ -18,10 +17,17 @@ const SearchHeader = ({ onSearch }) => {
       handleSearch();
     }
   };
+
+  const onReset = () => {
+    getMostPopular();
+    resetSelectVideo(null);
+    inputRef.current.value = '';
+  };
+
   return (
     <>
       <header className={styles.header}>
-        <button className={styles.homeBtn}>
+        <button className={styles.homeBtn} onClick={onReset}>
           <img
             className={styles.logo}
             src='/images/logo.png'
