@@ -2,6 +2,19 @@
   max-width: 80rem;
 }
 
+.header {
+  min-width: 80rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.loadingImg {
+  width: 70%;
+}
+
 .content {
   display: flex;
 }

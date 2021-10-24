@@ -21,51 +21,57 @@ function App({ youtube }) {
         setVideos(videos);
         setLoading(false);
       })
-
       .catch(error => console.log('error', error)); //Error처리는 서비스 API를 소비하는 쪽에서 하는것이 좋음
     setSelectedVideo(null);
   };
 
   const getMostPopular = () => {
+    setLoading(true);
     youtube
       .mostPopular() //
-      .then(videos => setVideos(videos))
+      .then(videos => {
+        setVideos(videos);
+        setLoading(false);
+      })
       .catch(error => console.log('error', error));
-    console.log('home');
   };
 
   useEffect(() => getMostPopular(), []); //마운트 되었을 때만 호출
-  // useEffect(() => {
-  //   youtube //
-  //     .mostPopular() //
-  //     .then(videos => setVideos(videos))
-  //     .catch(error => console.log('error', error));
-  // }
-  // , []); //마운트 되었을 때만 호출
 
   return (
     <div className={styles.app}>
-      <SearchHeader
-        onSearch={search}
-        getMostPopular={getMostPopular}
-        resetSelectVideo={selectVideo}
-      />
-      {loading && <div>loading</div>}
-      <section className={styles.content}>
-        {selectedVideo && (
-          <div className={styles.detail}>
-            <VideoDetail video={selectedVideo} />
-          </div>
-        )}
-        <div className={styles.list}>
-          <VideoList
-            className={styles.videoList}
-            videos={videos}
-            onVideoClick={selectVideo}
-            display={selectedVideo ? 'list' : 'grid'}
+      <div className={styles.header}>
+        <SearchHeader
+          onSearch={search}
+          getMostPopular={getMostPopular}
+          resetSelectVideo={selectVideo}
+        />
+      </div>
+      {loading ? (
+        <div className={styles.loading}>
+          <img
+            className={styles.loadingImg}
+            src='/images/loading_img.jpg'
+            alt='loading'
           />
         </div>
-      </section>
+      ) : (
+        <section className={styles.content}>
+          {selectedVideo && (
+            <div className={styles.detail}>
+              <VideoDetail video={selectedVideo} />
+            </div>
+          )}
+          <div className={styles.list}>
+            <VideoList
+              className={styles.videoList}
+              videos={videos}
+              onVideoClick={selectVideo}
+              display={selectedVideo ? 'list' : 'grid'}
+            />
+          </div>
+        </section>
+      )}
     </div>
   );
 }
