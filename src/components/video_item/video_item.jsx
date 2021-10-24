@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './video_item.module.css';
+
 const VideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
-  const displaytype = display === 'list' ? styles.list : styles.grid;
+  const displayType = display === 'list' ? styles.list : styles.grid;
+  console.log(displayType);
   return (
     //props안에있는 video를 바로 받아서 그 안의 snippet을 가져옴 (deconstructing)
     <li
-      className={`${styles.container} ${displaytype}`}
+      className={`${styles.container} ${displayType}`}
       onClick={() => onVideoClick(video)}
     >
       <div className={styles.video}>

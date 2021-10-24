@@ -5,6 +5,7 @@ import VideoDetail from './components/video_detail/video_detail';
 import VideoList from './components/video_list/video_list';
 
 function App({ youtube }) {
+  const [loading, setLoading] = useState(false);
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -13,9 +14,14 @@ function App({ youtube }) {
   };
 
   const search = query => {
+    setLoading(true);
     youtube
       .search(query) //
-      .then(videos => setVideos(videos))
+      .then(videos => {
+        setVideos(videos);
+        setLoading(false);
+      })
+
       .catch(error => console.log('error', error)); //Error처리는 서비스 API를 소비하는 쪽에서 하는것이 좋음
     setSelectedVideo(null);
   };
@@ -44,6 +50,7 @@ function App({ youtube }) {
         getMostPopular={getMostPopular}
         resetSelectVideo={selectVideo}
       />
+      {loading && <div>loading</div>}
       <section className={styles.content}>
         {selectedVideo && (
           <div className={styles.detail}>
@@ -55,7 +62,7 @@ function App({ youtube }) {
             className={styles.videoList}
             videos={videos}
             onVideoClick={selectVideo}
-            display={selectVideo ? 'list' : 'grid'}
+            display={selectedVideo ? 'list' : 'grid'}
           />
         </div>
       </section>

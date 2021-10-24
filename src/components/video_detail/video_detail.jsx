@@ -16,7 +16,6 @@ const VideoDetail = ({ video, video: { snippet } }) => {
         allowfullscreen
       ></iframe>
       <h2 className={styles.title}>{snippet.title}</h2>
-      {/* <div className={styles.}></div> */}
       <h3>{snippet.channelTitle}</h3>
       <pre className={styles.description}>{snippet.description}</pre>
     </section>
