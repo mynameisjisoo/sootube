@@ -9,9 +9,9 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const selectVideo = useCallback(video => {
+  const selectVideo = video => {
     setSelectedVideo(video);
-  });
+  };
 
   const search = useCallback(
     query => {
@@ -42,6 +42,9 @@ function App({ youtube }) {
 
   useEffect(() => getMostPopular(), [youtube, getMostPopular]);
 
+  const scrollUp = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <div className={styles.app}>
       <div className={styles.header}>
@@ -56,21 +59,26 @@ function App({ youtube }) {
           />
         </div>
       ) : (
-        <section className={styles.content}>
-          {selectedVideo && (
-            <div className={styles.detail}>
-              <VideoDetail video={selectedVideo} />
+        <>
+          <section className={styles.content}>
+            {selectedVideo && (
+              <div className={styles.detail}>
+                <VideoDetail video={selectedVideo} />
+              </div>
+            )}
+            <div className={styles.list}>
+              <VideoList
+                className={styles.videoList}
+                videos={videos}
+                onVideoClick={selectVideo}
+                display={selectedVideo ? 'list' : 'grid'}
+              />
             </div>
-          )}
-          <div className={styles.list}>
-            <VideoList
-              className={styles.videoList}
-              videos={videos}
-              onVideoClick={selectVideo}
-              display={selectedVideo ? 'list' : 'grid'}
-            />
-          </div>
-        </section>
+          </section>
+          <button className={styles.arrowUp} onClick={scrollUp}>
+            <i className='fas fa-arrow-alt-circle-up'></i>
+          </button>
+        </>
       )}
     </div>
   );

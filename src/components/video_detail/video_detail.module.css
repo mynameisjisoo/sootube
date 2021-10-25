@@ -13,3 +13,10 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
+@media screen and (max-width: 48rem) {
+  .video {
+    width: 100%;
+    height: 400px;
+  }
+}
