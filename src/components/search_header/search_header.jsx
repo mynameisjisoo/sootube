@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './search_header.module.css';
 
-const SearchHeader = ({ onSearch, getMostPopular, resetSelectVideo }) => {
+const SearchHeader = memo(({ onSearch, getMostPopular }) => {
   const inputRef = React.useRef();
-
   const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
@@ -18,15 +17,16 @@ const SearchHeader = ({ onSearch, getMostPopular, resetSelectVideo }) => {
     }
   };
 
-  const onReset = () => {
+  const backToInitialScreen = () => {
     getMostPopular();
-    resetSelectVideo(null);
     inputRef.current.value = '';
   };
 
+  console.log('header~!!');
+
   return (
     <header className={styles.header}>
-      <button className={styles.homeBtn} onClick={onReset}>
+      <button className={styles.homeBtn} onClick={backToInitialScreen}>
         <img
           className={styles.logo}
           src='/images/logo.png'
@@ -47,6 +47,6 @@ const SearchHeader = ({ onSearch, getMostPopular, resetSelectVideo }) => {
       </button>
     </header>
   );
-};
+});
 
 export default SearchHeader;

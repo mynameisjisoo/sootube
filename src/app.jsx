@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './app.module.css';
 import SearchHeader from './components/search_header/search_header';
 import VideoDetail from './components/video_detail/video_detail';
@@ -9,24 +9,28 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const selectVideo = video => {
+  const selectVideo = useCallback(video => {
     setSelectedVideo(video);
-  };
+  });
 
-  const search = query => {
+  const search = useCallback(
+    query => {
+      setLoading(true);
+      youtube
+        .search(query) //
+        .then(videos => {
+          setVideos(videos);
+          setLoading(false);
+        })
+        .catch(error => console.log('error', error)); //Error처리는 서비스 API를 소비하는 쪽에서 하는것이 좋음
+      setSelectedVideo(null);
+    },
+    [youtube]
+  );
+
+  const getMostPopular = useCallback(() => {
     setLoading(true);
-    youtube
-      .search(query) //
-      .then(videos => {
-        setVideos(videos);
-        setLoading(false);
-      })
-      .catch(error => console.log('error', error)); //Error처리는 서비스 API를 소비하는 쪽에서 하는것이 좋음
     setSelectedVideo(null);
-  };
-
-  const getMostPopular = () => {
-    setLoading(true);
     youtube
       .mostPopular() //
       .then(videos => {
@@ -34,18 +38,14 @@ function App({ youtube }) {
         setLoading(false);
       })
       .catch(error => console.log('error', error));
-  };
+  }, [youtube]);
 
-  useEffect(() => getMostPopular(), []); //마운트 되었을 때만 호출
+  useEffect(() => getMostPopular(), [youtube, getMostPopular]);
 
   return (
     <div className={styles.app}>
       <div className={styles.header}>
-        <SearchHeader
-          onSearch={search}
-          getMostPopular={getMostPopular}
-          resetSelectVideo={selectVideo}
-        />
+        <SearchHeader onSearch={search} getMostPopular={getMostPopular} />
       </div>
       {loading ? (
         <div className={styles.loading}>

@@ -11,9 +11,9 @@ const VideoDetail = ({ video, video: { snippet } }) => {
         height='500px'
         src={`https://www.youtube.com/embed/${video.id}`}
         title='YouTube video player'
-        frameborder='0'
+        frameBorder='0'
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowfullscreen
+        allowFullScreen
       ></iframe>
       <h2 className={styles.title}>{snippet.title}</h2>
       <h3>{snippet.channelTitle}</h3>
