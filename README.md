@@ -2,7 +2,7 @@
 
 ## Youtube API와 React를 이용한 유튜브 클론 코딩
 
-### <a href="https://jisoo-youtube.netlify.app/" target="_blank">✨ Demo Link ✨</a>
+### [✨ Demo Link ✨](https://jisoo-youtube.netlify.app/){:target="\_blank"}
 
 ### 1. 사용한 기술
 
@@ -68,5 +68,4 @@
 🌱 PostCSS 를 이용한 모듈화
 🌱 media query를 이용한 반응형 CSS
 🌱 netlify를 이용한 배포 방법
-
 ```
