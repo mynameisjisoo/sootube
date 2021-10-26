@@ -2,7 +2,7 @@
 
 ## Youtube API와 React를 이용한 유튜브 클론 코딩
 
-### [✨ Demo Link ✨](https://jisoo-youtube.netlify.app/){:target="\_blank"}
+### [✨ Demo Link ✨](https://jisoo-youtube.netlify.app/)
 
 ### 1. 사용한 기술
 
