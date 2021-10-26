@@ -1,7 +1,7 @@
 .app {
   max-width: 80rem;
-  /* color: white; */
-  /* background-color: black; */
+  color: lightgray;
+  background-color: black;
 }
 
 .loading {
@@ -33,6 +33,7 @@
   background-color: transparent;
   font-size: 3rem;
   transition: all 300ms ease;
+  color: slategrey;
 }
 
 .arrowUp:hover {

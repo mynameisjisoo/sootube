@@ -32,23 +32,29 @@ const SearchHeader = memo(({ onSearch, getMostPopular }) => {
         />
         <h1 className={styles.title}>SooTube</h1>
       </button>
-
-      <input
-        ref={inputRef}
-        className={styles.input}
-        type='search'
-        placeholder='Search anything you want'
-        onKeyPress={onKeyPress}
-      />
-      <button className={styles.btn} type='submit' onClick={onClick}>
-        <img className={styles.btnImg} src='/images/search.png' alt='search' />
-      </button>
+      <span className={styles.inputContainer}>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type='search'
+          placeholder='Search anything you want'
+          onKeyPress={onKeyPress}
+        />
+        <button className={styles.btn} type='submit' onClick={onClick}>
+          <img
+            className={styles.btnImg}
+            src='/images/search.png'
+            alt='search'
+          />
+        </button>
+      </span>
       <a
         href='https://github.com/mynameisjisoo/youtube-clone'
         target='_blank'
+        rel='noreferrer'
         className={styles.github}
       >
-        <i class='fab fa-github'></i>
+        <i className='fab fa-github'></i>
       </a>
     </header>
   );
