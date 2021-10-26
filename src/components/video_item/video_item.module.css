@@ -1,6 +1,5 @@
 .container {
   padding: 0.2em;
-  /* flex-wrap: wrap; */
 }
 
 .container.grid {
@@ -17,7 +16,6 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  /* padding: 15px 10px; */
   box-shadow: 3px 3px 5px 0px lightgray;
   cursor: pointer;
   transition: all 300ms ease;

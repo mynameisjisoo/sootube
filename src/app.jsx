@@ -45,6 +45,7 @@ function App({ youtube }) {
   const scrollUp = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
   return (
     <div className={styles.app}>
       <div className={styles.header}>
@@ -75,6 +76,7 @@ function App({ youtube }) {
               />
             </div>
           </section>
+
           <button className={styles.arrowUp} onClick={scrollUp}>
             <i className='fas fa-arrow-alt-circle-up'></i>
           </button>

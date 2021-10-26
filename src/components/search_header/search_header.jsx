@@ -22,8 +22,6 @@ const SearchHeader = memo(({ onSearch, getMostPopular }) => {
     inputRef.current.value = '';
   };
 
-  console.log('header~!!');
-
   return (
     <header className={styles.header}>
       <button className={styles.homeBtn} onClick={backToInitialScreen}>
@@ -45,6 +43,13 @@ const SearchHeader = memo(({ onSearch, getMostPopular }) => {
       <button className={styles.btn} type='submit' onClick={onClick}>
         <img className={styles.btnImg} src='/images/search.png' alt='search' />
       </button>
+      <a
+        href='https://github.com/mynameisjisoo/youtube-clone'
+        target='_blank'
+        className={styles.github}
+      >
+        <i class='fab fa-github'></i>
+      </a>
     </header>
   );
 });
