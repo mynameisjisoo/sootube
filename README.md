@@ -38,15 +38,13 @@
 
 <img width="500px" src=https://user-images.githubusercontent.com/84840032/138893287-4f859184-2634-47b4-93fa-8a10c074a125.png>
 
-```
-✨ 화면 크기에 따라 UI를 다르게 구성하여 사용자에 편리함을 제공함
-```
-
 <img width="500px" src=https://user-images.githubusercontent.com/84840032/138893624-afb33fbd-e617-4785-b10a-55d486ff446e.png>
 
 ```
 ✨ 사용자가 클릭한 비디오의 metadata와 비디오 플레이어를 보여줌
 ✨ SooTube 로고를 누르면 초기화면으로 돌아감
+✨ 화면 크기에 따라 UI를 다르게 구성하여 사용자에 편리함을 제공함
+
 ```
 
 #### ⏳ 로딩이미지
