@@ -6,7 +6,7 @@
 
 ### 1. 사용한 기술
 
-<img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"><img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"><img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=black"><img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=black">
+<img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=black"> <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=black">
 
 ### 2. 실행 화면
 
@@ -21,8 +21,7 @@
 <img width="500px" src=https://user-images.githubusercontent.com/84840032/138892828-979988fe-1280-4813-9e11-ed970370a4c0.png>
 
 ```
-✨ Youtube API로부터 인기동영상 25개를 받아와서
-  화면에 비디오 썸네일 이미지와 제목, 채널이름이 있는 리스트 보여줌
+✨ Youtube API로부터 인기동영상 25개를 받아서 비디오 리스트를 보여줌
 ```
 
 #### 🔍검색
@@ -32,20 +31,21 @@
 <img width="500px" src=https://user-images.githubusercontent.com/84840032/138893111-2a81697a-e0db-488b-9b9a-6e50f56048f3.gif>
 
 ```
-✨ 사용자가 입력한 검색어를 받아서 Youtube API의 search data를 받아옴
-✨ 검색어에 비디오 리스트를 화면에 보여줌
+✨ 사용자가 입력한 검색어에 해당하는 비디오 리스트를 보여줌
 ```
 
 #### 📺 비디오 디테일 페이지
 
 <img width="500px" src=https://user-images.githubusercontent.com/84840032/138893287-4f859184-2634-47b4-93fa-8a10c074a125.png>
 
-##### 화면크기에 따라 달라지는 UI
+```
+✨ 화면 크기에 따라 UI를 다르게 구성하여 사용자에 편리함을 제공함
+```
 
 <img width="500px" src=https://user-images.githubusercontent.com/84840032/138893624-afb33fbd-e617-4785-b10a-55d486ff446e.png>
 
 ```
-✨ 사용자가 비디오 리스트 중 한가지를 클릭하면 클릭한 비디오의 metadata와 비디오 플레이어를 보여줌
+✨ 사용자가 클릭한 비디오의 metadata와 비디오 플레이어를 보여줌
 ✨ SooTube 로고를 누르면 초기화면으로 돌아감
 ```
 
